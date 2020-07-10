@@ -6,7 +6,7 @@
             <% if item.image_url.attached?  %> 
             <%= image_tag item.image_url  %>
             <% else %> 
-                    <%= image_tag "about-me"  %>
+                    <%= image_tag (asset_path "about-me.jpg")  %>
             <% end %> 
                                  
          </div>
