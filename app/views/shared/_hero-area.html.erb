@@ -1,0 +1,29 @@
+<section class="hero-area">
+        <div class="hero-post-slides owl-carousel">
+
+            <!-- Single Hero Post -->
+            <% if get_books_with_rating.any? %> 
+                <% get_books_with_rating.each do |item| %> 
+            <div class="single-hero-post">
+                <!-- Post Image -->
+                <% if item.image_url.attached? %> 
+                <div class="slide-img bg-img" style="background-image: url(<%= url_for(item.image_url)  %>);">
+                </div>
+                <% else %>
+                     <div class="slide-img bg-img" style="background-image: url(<%= asset_path "1.jpg"  %>);">
+                </div>
+                <% end %> 
+                <!-- Post Content -->
+                <div class="hero-slides-content">
+                    <p><%= item.created_at %> </p>
+                    <a href="#" class="post-title">
+                        <h4><%= item.book_name %> </h4>
+                    </a>
+                </div>
+            </div>
+                <% end %> 
+            <% end %> 
+            <!-- Single Hero Post -->
+
+        </div>
+    </section>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <%= stylesheet_link_tag "application.css" %>
+  </head>
+  <body>
+
+<div class="jumbotron text-center">
+  <h1>Hi <%= @user.user_name %></h1>
+    <p class="lead"><strong>I am quite interested in this book. browse for me.</strong> </p>
+  <hr>
+  <p class="lead">
+   <%= link_to  "View Request", book_url(@book)  , class:"btn btn-primary btn-sm",role:"button" %>
+  </p>
+</div>
+  </body>
+</html>

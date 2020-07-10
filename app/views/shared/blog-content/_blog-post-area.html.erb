@@ -1,0 +1,61 @@
+  <div class="col-12 col-lg-8">
+                    <div class="blog-posts-area">
+
+                        <!-- Single Blog Post -->
+                        <% if @books_new.any? %> 
+                            <% @books_new.each do |item|  %> 
+                        <div class="single-blog-post d-flex flex-wrap mt-50">
+                            <!-- Thumbnail -->
+                            <div class="post-thumbnail mb-50 icon-home-user">
+                                <a href="#">
+                                <% if item.image_url.attached? %> 
+                                     <%= image_tag item.display_image if item.image_url.attached?%>
+                                <% else %> 
+                                     <%= image_tag "lp5.jpg"%>
+                                <% end %> 
+                               
+                               </a>
+                            </div>
+                            <!-- Content -->
+                            <div class="post-content mb-50">
+                              
+                                <a href="#" >
+                                    <h4 class="post-title"><%= item.book_name  %> </h4>
+                                </a>
+                                  <p class="post-date"><%= item.created_at %> </p>
+                                <div class="post-meta">
+                                    <a href="#"><span>by</span><%= item.author %> </a>
+                                    <a href="#"><i class="fa fa-eye"></i> 192</a>
+                                    <a href="#"><i class="fa fa-comments"></i> 08</a>
+                                </div>
+                                <p class="post-excerpt"><%= item.description.html_safe unless item.description.nil?  %> </p>
+                              <%= link_to  "Continue Reading ", book_path(item),class:"read-more-btn" %>
+                              <br/>
+                                <% if current_user.favorite_books.where(book_id: item.id).present? %> 
+                               
+                                 <i class="fa fa-thumbs-up" aria-hidden="true"> 
+                                    <%= link_to  "Have Liked", favourite_path(id: item.id), class: "btn btn-primary",method: :delete%>
+                                </i>
+                                <% else %>
+                                       <i class="fa fa-thumbs-up" aria-hidden="true"> 
+                                    <%= link_to  "Like", add_favourite_path(id: item.id), class: "btn btn-success"%>
+                                </i>
+                                <% end %> 
+                            </div>
+                            <!-- Post Curve Line -->
+                            <%= image_tag  "post-curve-line.png", class:"post-curve-line"%>
+                            
+                        </div>
+                        
+                            <% end %> 
+                        <% end %> 
+
+                        <!-- Single Blog Post -->
+
+                    </div>
+                    <div class="foode-pager mt-50" style="margin-left: 28%;">
+                        <%= will_paginate @books_new, params: { controller: :home, action: :index } ,class: "page-item",id: "paginate-admin"%>
+                    </div>
+                    <!-- Pager -->
+
+                </div>
