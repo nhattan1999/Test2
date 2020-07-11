@@ -86,10 +86,10 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
       address: "smtp.gmail.com",
       port: 587,
-      user_name: "abcan1999@gmail.com",
-      password: "rubyonrails@org.com",
+      user_name: ENV["gmail_username"],
+      password: ENV["gmail_password"],
       authentication: :plain,
-      #domain: "herokuapp.com",
+      domain: "heroku.com",
       enable_starttls_auto: true
   }
   if ENV["RAILS_LOG_TO_STDOUT"].present?
