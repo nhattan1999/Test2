@@ -45,6 +45,7 @@ gem 'momentjs-rails', '>= 2.9'
 gem 'popper_js'
 gem "figaro"
 gem 'will_paginate', '~> 3.1.0'
+gem 'sendgrid-ruby'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'mysql2', '>= 0.4.4'
