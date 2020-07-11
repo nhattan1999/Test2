@@ -89,7 +89,7 @@ Rails.application.configure do
       user_name: "abcan1999@gmail.com",
       password: "rubyonrails@org.com",
       authentication: :plain,
-      domain: "heroku.com",
+      #domain: "herokuapp.com",
       enable_starttls_auto: true
   }
   if ENV["RAILS_LOG_TO_STDOUT"].present?
