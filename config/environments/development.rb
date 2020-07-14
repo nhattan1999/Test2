@@ -56,14 +56,14 @@ Rails.application.configure do
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
   config.action_mailer.default_url_options = {host: "localhost:3000"}
-  config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      address: "smtp.gmail.com",
-      port: 587,
-      user_name: "abcan1999@gmail.com",
-      password: "rubyonrails@org.com",
+      address: "smtp.sendgrid.net",
+      port: 465,
+      user_name: ENV['SENDGRID_USERNAME'],
+      password: ENV['SENDGRID_PASSWORD'],
       authentication: :plain,
+      #domain: "heroku.com",
       enable_starttls_auto: true
   }
   # Use an evented file watcher to asynchronously detect changes in source code,
