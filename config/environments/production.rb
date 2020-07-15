@@ -92,9 +92,7 @@ Rails.application.configure do
       domain: "heroku.com",
       enable_starttls_auto: true
   }
-  client = Selenium::WebDriver::Remote::Http::Default.new
-  client.read_timeout = 120 # seconds
-  driver = Selenium::WebDriver.for :remote, http_client: client
+
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
