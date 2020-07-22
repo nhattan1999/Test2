@@ -87,8 +87,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
       address: "smtp.sendgrid.net",
       port: 465,
-      user_name: ENV['SENDGRID_USERNAME'],
-      password: ENV['SENDGRID_PASSWORD'],
+      user_name: "apikey",
+      password: "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",
       authentication: :plain,
       domain: "heroku.com",
       enable_starttls_auto: true
