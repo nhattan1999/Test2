@@ -34,7 +34,7 @@ gem 'mini_magick'
 gem 'wow-rails'
 gem 'font-awesome-sass', '~> 4.7.0'
 # Use Active Storage variant
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 gem 'active_storage_validations'
 gem 'jquery-rails'
 # Reduces boot times through caching; required in config/boot.rb
